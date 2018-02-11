@@ -16,6 +16,18 @@
 
   <h2 class="title-home">{{ isset($note) ? 'Edit note: '.$note->title : 'Add a new note' }}</h2>
 
+  @if($courses->count() == 0)
+  <div class="sorry-div">
+    <img src="{{ asset('images/sorry.png') }}" alt="Sorry" height="125px" style="position:relative; left:2px;">
+    <p style="margin-top:20px; color:red; font-weight: bold;">You must join at least one course to add a note!</p>
+    @if($user->role == 1)
+      <p><b>To add a course</b>, use the button "Add a course" in the side bar.</p>
+    @else
+      <p>To <b>join a course</b>, use the button "Courses" in the side bar.</p>
+    @endif
+  </div>
+  @else
+
   <form class="form-note" method="post" action="{{ isset($note) ? route('editNote', $note->id) : route('addNote') }}" enctype="multipart/form-data">
     {{ csrf_field() }}
     @if ($errors->any())
@@ -58,6 +70,7 @@
       <button type="submit" class="btn btn-success btn-add-note">{{isset($note) ? 'Update' : 'Add note'}}</button>
     </div>
   </form>
+  @endif
 
 </div>
 

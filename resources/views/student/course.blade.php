@@ -16,6 +16,18 @@
 
 <h2 class="title-home">Classes from your university</h2>
 
+@if($classes->count() == 0)
+<div class="sorry-div">
+<img src="{{ asset('images/sorry.png') }}" alt="Sorry" height="125px" style="position:relative; left:2px;">
+<p style="margin-top:20px; color:red; font-weight: bold;">There is no courses yet, so there is nothing we can display here!</p>
+@if($user->role == 1)
+  <p><b>To add a note</b>, make sure to <b>create a course</b> and then <b>create a note</b> for this course. All of this can be done using the side bar.</p>
+@else
+  <p>It looks like your teachers have not created any course yet! Wait for them to do so, and you'll be able to join them here!</p>
+@endif
+</div>
+@endif
+
 
 	@foreach($classes as $index => $class)
 	@if( ($index+1) % 3 == 1)

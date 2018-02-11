@@ -16,6 +16,17 @@
 
 	<h2 class="title-home">Your Groups</h2>
 
+	@if($groups->count() == 0)
+	<div class="sorry-div">
+    <p style="margin-top:20px; color:red; font-weight: bold;">You don't have any groups yet!</p>
+    @if($user->role == 1)
+      <p><b>To add a note</b>, make sure to <b>create a course</b> and then <b>create a note</b> for this course. All of this can be done using the side bar.</p>
+    @else
+      <p><b>To add a group</b>, <b>press the button below</b> or <b>ask a friend for an invite!</b></p>
+    @endif
+  </div>
+  @endif
+
 
 	@foreach($groups as $index => $group)
 	@if( ($index+1) % 3 == 1)

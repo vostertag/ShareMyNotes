@@ -6,6 +6,26 @@
 
 <h2 class="title-home">Notes</h2>
 
+@if($notes->count() == 0)
+
+@if(isset($search))
+<div class="sorry-div">
+  <p> Sorry, we didn't find any note corresponding to your search! </p>
+</div>
+@else
+  <div class="sorry-div">
+    <img src="{{ asset('images/sorry.png') }}" alt="Sorry" height="125px" style="position:relative; left:2px;">
+    <p style="margin-top:20px; color:red; font-weight: bold;">You don't have any notes, so there is nothing we can display here!</p>
+    @if($user->role == 1)
+      <p><b>To add a note</b>, make sure to <b>create a course</b> and then <b>create a note</b> for this course. All of this can be done using the side bar.</p>
+    @else
+      <p><b>To add a note</b>, make sure you <b>joined a course</b> and then <b>create a note</b> for this course. All of this can be done using the side bar.</p>
+    @endif
+  </div>
+@endif
+
+@endif
+
 @foreach($notes->sortByDesc('created_at') as $note)
   <div class="media note-container">
   <img class="mr-3 note-picture" src="{{  url('image/'. $note->user->profile_picture) }}" alt="Profile picture">

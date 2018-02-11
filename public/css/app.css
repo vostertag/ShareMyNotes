@@ -357,6 +357,16 @@ a:hover{
 	display:none;
 }
 
+.sorry-div{
+	margin: 0 auto;
+	text-align: center;
+	margin-top: 20px;
+}
+
+.sorry-div img{
+	opacity: 0.7;
+}
+
 @media screen and (max-width: 580px){
 	.btn-signup-left{
 		text-align: center;

@@ -118,6 +118,7 @@ class NoteController extends Controller
     public function search(){
     	$user = Auth::user();
     	$current = -1;
+    	$search = true;
     	request()->validate([
             'search' => 'required|string|max:255',
         ]);
@@ -147,6 +148,6 @@ class NoteController extends Controller
         }else{
         	return back();
         }
-        return view('common.notes', compact('user', 'notes', 'current'));
+        return view('common.notes', compact('user', 'notes', 'current', 'search'));
     }
 }
