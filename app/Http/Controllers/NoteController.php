@@ -125,7 +125,7 @@ class NoteController extends Controller
         $word = request()->input('search');
         $names = explode(" ", $word);
         if($user->role == 1){
-            $notes = $user->notes;
+            $notes = \ShareMyNotes\Note::where('user_id', $user->id)->where('title', 'like', '%' . $word . '%')->orWhere('description', 'like', '%'.$word.'%')->get();
         }else if($user->role == 2){
             $user_courses = $user->course_users;
             $courses = [];
