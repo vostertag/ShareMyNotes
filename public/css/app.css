@@ -1,0 +1,398 @@
+@import url(https://fonts.googleapis.com/css?family=Rubik);
+ 
+html,
+body {
+  height: 100%;
+  font-family: 'Rubik', sans-serif;
+}
+
+a:hover{
+	text-decoration: none !important;
+}
+
+.body-no-header {
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex;
+  -ms-flex-align: center;
+  -ms-flex-pack: center;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.body-home{
+	/*background-color: #f8f8f8;
+    height: 100%;
+    overflow: hidden;*/
+}
+
+.header{
+	z-index: 2;
+}
+
+.icon-open{
+	color: white;
+	display: none;
+}
+
+.btn-toggle{
+	width: 56px;
+	height: 40px;
+}
+
+.fill{
+	min-height: 100%;
+}
+
+.landing-logo{
+	display: block;
+	margin: 0 auto;
+	margin-top: 0px;
+}
+
+.align-center{
+	text-align: center;
+}
+
+.align-right{
+	text-align: right;
+}
+
+.landing-intro{
+	margin-top: 30px;
+}
+
+.btn-login{
+	display: block;
+	margin: 0 auto;
+	margin-top: 25px;
+}
+
+.row-signup{
+	margin-top: 30px;
+}
+
+.btn-signup-left{
+	text-align: right;
+}
+
+
+
+
+.form-signin {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+.form-signin .checkbox {
+  font-weight: 400;
+}
+.form-signin .form-control {
+  position: relative;
+  box-sizing: border-box;
+  height: auto;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.img-signup{
+	margin: 0 auto;
+	display: block;
+}
+
+.signup-container{
+	padding: 10px;
+	text-align: center;
+}
+
+.float-right{
+	float: right;
+}
+
+.mandatory{
+	color: red;
+}
+
+.fa-margin{
+	margin-left: 5px;
+}
+
+.btn-signup{
+	width: 100%;
+}
+
+.col-home-left{
+	border-right: 1px solid lightgrey;
+}
+
+.sidenav {
+    height: 100%; /* 100% Full-height */
+    position: fixed; /* Stay in place */
+    width: 20%;
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+    left: 0;
+    background-color: #f8f9fa; /* Black*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 57px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+    border-right: 1px solid lightgrey;
+}
+
+.h4-sidebar{
+	padding: 10px;
+    /*background-color: grey;*/
+    padding-top: 20px;
+    padding-bottom: 10px;
+    text-align: center;
+    color: black;
+    font-weight: bold;
+}
+
+.a-sidebar{
+	color: black;
+	display: block;
+	margin-bottom: 0px;
+	background-color: white;
+	text-align: center;
+	border-top: 1px solid lightgrey;
+	padding: 10px;
+}
+
+.a-sidebar:hover{
+	background-color:black;
+	color: white;
+	text-decoration: none;
+}
+
+.a-sidebar-last{
+	border-bottom: 1px solid lightgrey
+}
+
+.btn-sidenav{
+	display: block !important;
+	margin: 0 auto;
+	margin-top: 20px;
+}
+
+.container-home{
+	padding-top: 48px;
+	padding-left: 20% !important;
+}
+
+.note-picture{
+	width: 64px;
+	height: 64px;
+	border-radius: 100%;
+	margin: 5px;
+}
+
+.note-container{
+	margin: 0 auto;
+	margin-top: 20px;
+	width: 85%;
+	box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
+	padding: 10px;
+}
+
+.note-body{
+	padding: 5px;
+}
+
+.note-title{
+	font-weight: bold;
+	margin-bottom: 2px;
+}
+
+.note-info{
+	margin-top: 2px;
+	margin-bottom: 2px;
+	font-style: italic;
+	font-size: 14px;
+}
+
+.note-info span{
+	margin-left: 20px;
+}
+
+.note-footer{
+	margin-top: 10px;
+}
+
+.fa-margin{
+	margin-right: 3px;
+}
+
+.a-current{
+	color: white;
+	background-color: black;
+}
+
+.a-previous{
+	color: blue !important;
+}
+
+.a-previous:hover{
+	color: black !important;
+	cursor: pointer;
+}
+
+.body-previous{
+	text-align: center;
+}
+
+.edit{
+	margin-left: 10px;
+}
+
+.edit:hover{
+	color: grey !important;
+	cursor: pointer;
+}
+
+.open-side{
+	display: none;
+	margin: 0 auto;
+}
+
+.close-side{
+	display: none;
+	margin: 0 auto;
+}
+
+.title-home{
+	text-align: center;
+	margin-top: 20px;
+	font-weight: bold;
+}
+
+
+
+
+.form-note{
+	margin: 0 auto;
+	margin-top: 15px;
+	width: 85%;
+	box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
+	padding: 10px;
+}
+
+.btn-add-note{
+	width: 100%;
+}
+
+
+.image-account{
+	text-align: center;
+}
+
+.image-account img{
+	width: 125px;
+	height: 125px;
+	border: 3px solid darkgrey;
+	margin-bottom: 15px;
+}
+
+.class-container{
+	margin: 0 auto;
+	margin-left: 10px;
+	margin-top: 20px;
+	width: 100%;
+	box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
+	padding: 10px;
+}
+
+.center{
+	margin: 0 auto;
+}
+
+.btn-add-group{
+	width: 95%;
+	text-align: center;
+	margin: 0 auto;
+	margin-top: 20px;
+	display: block;
+}
+
+@media screen and (max-width: 580px){
+	.btn-signup-left{
+		text-align: center;
+		margin-bottom: 20px;
+	}
+
+	.btn-signup-right{
+		text-align: center;
+	}
+
+	.landing-logo{
+		display: block;
+		margin: 0 auto;
+		margin-top: 100px;
+	}
+}
+
+@media screen and (max-width: 992px){
+	.sidenav{
+		display: none;
+	}
+
+	.open-side{
+		margin-top: 20px;
+		display: block;
+		text-align: center;
+	}
+
+	.close-side{
+		margin-top: 20px;
+		display: block;
+		text-align: center;
+	}
+
+	.sidenav{
+		width: 90%;
+	}
+
+	.container-home{
+		padding-top: 48px;
+		padding-left: 0% !important;
+	}
+
+	.note-container{
+		margin: 0 auto;
+		margin-top: 20px;
+		width: 95%;
+		box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
+		padding: 5px;
+	}
+
+	.class-container{
+		margin: 0 auto;
+		margin-top: 20px;
+		width: 95%;
+		box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
+		padding: 5px;
+	}
+
+	.note-body{
+		padding: 5px;
+	}
+
+}
