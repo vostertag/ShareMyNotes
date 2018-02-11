@@ -102,6 +102,19 @@ class NoteController extends Controller
         return back();
     }
 
+    public function delete(){
+    	$user = Auth::user();
+    	request()->validate([
+            'note' => 'required|exists:notes,id'
+        ]);
+    	$note = \ShareMyNotes\Note::find(request()->input('note'));
+    	if($note->user->id == $user->id){
+    		$note->delete();
+    		return redirect()->route('home');
+    	}
+        return back();
+    }
+
     public function search(){
     	$user = Auth::user();
     	$current = -1;

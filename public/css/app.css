@@ -332,6 +332,31 @@ a:hover{
 	display: block;
 }
 
+.course-edit{
+	display: none;
+	margin-left: 5px;
+}
+
+.course-edit:hover{
+	cursor: pointer;
+}
+
+.a-sidebar:hover .course-edit{
+	display: inline;
+}
+
+.sidebar-div-a a{
+	color: inherit;
+}
+
+.sidebar-div-a:hover a{
+	color:inherit;
+}
+
+.delete-course{
+	display:none;
+}
+
 @media screen and (max-width: 580px){
 	.btn-signup-left{
 		text-align: center;

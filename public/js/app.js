@@ -10,4 +10,16 @@ $( document ).ready(function() {
 		$(".sidenav").hide();
 	});
 
+	$('.deleteCourse').on("click", function(){
+		$(this).fadeOut(function(){
+			$(this).next(".delete-course").fadeIn();
+		});
+	});
+
+	$('.btn-dont').on("click", function(){
+		$(this).parent('.delete-course').fadeOut(function(){
+			$(this).prev('.deleteCourse').fadeIn();
+		});
+	});
+
 });

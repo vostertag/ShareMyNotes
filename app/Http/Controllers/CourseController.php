@@ -64,6 +64,32 @@ class CourseController extends Controller
 	    return back();
     }
 
+    public function edit(){
+    	$user = Auth::user();
+    	if($user->role == 1){
+	    	request()->validate([
+	            'name' => 'required|string|max:255',
+	            'course' => 'required|exists:courses,id'
+	        ]);
+	        $course = \ShareMyNotes\Course::find(request()->input('course'));
+	        if($course->user->id == $user->id){
+		        $course->name = request()->input('name');
+		        $course->save();
+		    }
+	    }
+	    return back();
+    }
+
+    public function delete(\ShareMyNotes\Course $course){
+    	$user = Auth::user();
+    	if($user->role == 1){
+	        if($course->user->id == $user->id){
+		        $course->delete();
+		    }
+	    }
+	    return back();
+    }
+
     public function joinCourse(){
     	$user = Auth::user();
     	if($user->role == 2){

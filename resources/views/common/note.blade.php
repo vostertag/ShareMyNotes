@@ -49,11 +49,42 @@
     </label>
     <small></small>
     </div>
+    @if(isset($note))
+    <div class="form-group">
+      <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#modalDelete"><i class="fas fa-trash-alt"></i> <span class="fa-margin">Delete</span></button>
+    </div>  
+    @endif
     <div class="form-group">
       <button type="submit" class="btn btn-success btn-add-note">{{isset($note) ? 'Update' : 'Add note'}}</button>
     </div>
   </form>
 
 </div>
+
+@if(isset($note))
+<div class="modal fade" id="modalDelete" tabindex="-1" role="dialog" aria-labelledby="modalDelete" aria-hidden="true">
+  <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"><i class="fas fa-trash-alt"></i> <span class="fa-margin">Delete my account</span></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form method="post" action="{{ route('deleteNote') }}"/>
+      <div class="modal-body body-previous">
+        <p> Are you sure about that? </p>
+        {{csrf_field()}}
+        <input type="hidden" name="note" value="{{ $note->id }}">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+        <button type="submit" class="btn btn-danger">Yes</button>
+      </div>
+     </form>
+    </div>
+  </div>
+</div>
+@endif
 
 @endsection

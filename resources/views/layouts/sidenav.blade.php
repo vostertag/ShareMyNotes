@@ -6,7 +6,9 @@
 	<a href="{{ route('home') }}" class="a-sidebar{{ (!isset($current) or $current == 0) ? ' a-current' : ''}}">All</a>
   @if($user->role == 1)
 	@foreach($user->courses as $course)
-	  	<a href="{{ route('course', $course->id) }}" class="a-sidebar{{ (isset($current) && $current == $course->id) ? ' a-current' : ''}}">{{ $course->name }}</a>
+      <div class="a-sidebar sidebar-div-a{{ (isset($current) && $current == $course->id) ? ' a-current' : ''}}">
+	  	<a href="{{ route('course', $course->id) }}" class="">{{ $course->name }}</a> <i class="fas fa-edit course-edit" data-toggle="modal" data-target="#editCourse{{$course->id}}"></i>
+    </div>
 	 @endforeach
    @else
    @foreach($user->course_users as $course)
@@ -49,4 +51,43 @@
     </div>
   </div>
 </div>
+
+@foreach($user->courses as $course)
+  @if($course->user->id == $user->id)
+  <div class="modal fade" id="editCourse{{$course->id}}" tabindex="-1" role="dialog" aria-labelledby="editCourse{{$course->id}}" aria-hidden="true">
+    <div class="modal-dialog modal-sm" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel"><i class="fas fa-edit"></i> <span class="fa-margin">Edit course</span></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <form method="post" action="{{ route('editCourse') }}">
+          {{ csrf_field() }}
+        <div class="modal-body body-previous">
+        <div class="form-group">
+          <input type="text" name="name" class="form-control" id="nameOfClass" placeholder="Name of the class" value="{{ $course->name }}">
+          <input type="hidden" value="{{ $course->id }}" name="course">
+        </div>
+        <div class="form-group">
+          <button type="button" class="btn btn-outline-danger deleteCourse"><i class="fas fa-trash-alt"></i> <span class="fa-margin">Delete this course</span></button>
+          <div class="delete-course">
+            <p> Are you sure? This will also delete all the notes for this course</p>
+            <button type="button" class="btn btn-secondary btn-dont">No</button>
+            <a href="{{ route('deleteCourse', $course->id) }}"><button type='button' class="btn btn-danger">Yes</button></a>
+          </div>
+        </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-success" >Edit</button>
+        </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  @endif
+@endforeach
 @endif

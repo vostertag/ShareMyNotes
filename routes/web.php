@@ -25,9 +25,12 @@ Route::post('/note', 'NoteController@store')->name('addNote');
 Route::get('/note/edit/{note}', 'NoteController@edit')->name('editNote');
 Route::post('/note/edit/{note}', 'NoteController@update')->name('editNote');
 Route::post('/note/search', 'NoteController@search')->name('searchNote');
+Route::post('/note/delete', 'NoteController@delete')->name('deleteNote');
 
 // Courses
 Route::post('/', 'CourseController@save')->name('addCourse');
+Route::post('/courses/edit', 'CourseController@edit')->name('editCourse');
+Route::get('/courses/delete/{course}', 'CourseController@delete')->name('deleteCourse');
 Route::get('/courses', 'CourseController@joinCourse')->name('showCourses');
 Route::get('/course/{course}', 'CourseController@index')->name('course');
 Route::get('/course/join/{course}', 'CourseController@joinThisCourse')->name('joinCourse');

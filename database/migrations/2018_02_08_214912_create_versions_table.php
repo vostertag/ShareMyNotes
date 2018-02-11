@@ -18,6 +18,8 @@ class CreateVersionsTable extends Migration
             $table->integer('note_id')->unsigned()->index();
             $table->string('file');
             $table->timestamps();
+
+            $table->foreign('note_id')->references('id')->on('notes')->onDelete('cascade');
         });
     }
 

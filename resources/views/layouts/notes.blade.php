@@ -15,7 +15,7 @@
           <a class="edit" href="{{ route('editNote', $note->id) }}"><i class="fas fa-edit"></i></a>
         @endif
     </h5>
-    <p class="note-info"><i class="fas fa-user"></i> {{ $note->user->first_name . ' ' . $note->user->last_name }} <span><i class="far fa-clock"></i> {{ $note->versions->last()->created_at->diffForHumans() }} </p></span>
+    <p class="note-info"><i class="fas fa-user"></i> {{ $note->user->first_name . ' ' . $note->user->last_name }} <span><i class="far fa-clock"></i> {{ $note->created_at->diffForHumans() }} </p></span>
     {{ $note->description }}
     <div class="note-footer">
       <a href="{{ route('file', $note->versions->last()->file) }}" download><button type="button" class="btn btn-outline-dark"><i class="fas fa-cloud-download-alt"></i> <span class="fa-margin">Download</span></button></a>
