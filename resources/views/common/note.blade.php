@@ -19,7 +19,7 @@
   @if($courses->count() == 0)
   <div class="sorry-div">
     <img src="{{ asset('images/sorry.png') }}" alt="Sorry" height="125px" style="position:relative; left:2px;">
-    <p style="margin-top:20px; color:red; font-weight: bold;">You must join at least one course to add a note!</p>
+    <p style="margin-top:20px; color:red; font-weight: bold;">You must have at least one course to add a note!</p>
     @if($user->role == 1)
       <p><b>To add a course</b>, use the button "Add a course" in the side bar.</p>
     @else

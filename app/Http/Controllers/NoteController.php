@@ -75,6 +75,7 @@ class NoteController extends Controller
     }
 
     public function update(\ShareMyNotes\Note $note){
+    	return $note;
     	$user = Auth::user();
 		if($user->id != $note->user_id){
     		return back();
@@ -99,7 +100,7 @@ class NoteController extends Controller
         $note->title = request()->input('title');
         $note->description = request()->input('description');
         $note->save();
-        return back();
+        return redirect()->route('home');
     }
 
     public function delete(){
@@ -149,5 +150,9 @@ class NoteController extends Controller
         	return back();
         }
         return view('common.notes', compact('user', 'notes', 'current', 'search'));
+    }
+
+    public function search2(){
+    	return redirect()->route('home');
     }
 }

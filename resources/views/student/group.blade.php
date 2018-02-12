@@ -75,7 +75,7 @@
 
 </div>
 
-<div style="text-align:center; padding-left: 20%">
+<div class="btn-add-group-div">
 <button type="button" class="btn btn-outline-success btn-add-group" data-toggle="modal" data-target="#addGroup">Create a group</button>
 </div>
 

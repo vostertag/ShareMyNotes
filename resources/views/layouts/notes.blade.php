@@ -40,12 +40,12 @@
     <div class="note-footer">
       <a href="{{ route('file', $note->versions->last()->file) }}" download><button type="button" class="btn btn-outline-dark"><i class="fas fa-cloud-download-alt"></i> <span class="fa-margin">Download</span></button></a>
 
-      <button type="button" class="btn btn-outline-dark" data-toggle="modal" data-target="#modalNote1"><i class="fas fa-hourglass-half"></i> <span class="fa-margin">Previous versions</span></button>
+      <button type="button" class="btn btn-outline-dark" data-toggle="modal" data-target="#modalNote{{ $note->id }}"><i class="fas fa-hourglass-half"></i> <span class="fa-margin">Previous versions</span></button>
     </div>
   </div>
   </div>
 
-  <div class="modal fade" id="modalNote1" tabindex="-1" role="dialog" aria-labelledby="modalNote1" aria-hidden="true">
+  <div class="modal fade" id="modalNote{{ $note->id }}" tabindex="-1" role="dialog" aria-labelledby="modalNote{{ $note->id }}" aria-hidden="true">
   <div class="modal-dialog modal-sm" role="document">
     <div class="modal-content">
       <div class="modal-header">

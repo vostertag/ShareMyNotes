@@ -77,7 +77,7 @@ a:hover{
 }
 
 .btn-signup-left{
-	text-align: right;
+	text-align: center;
 }
 
 
@@ -330,6 +330,17 @@ a:hover{
 	margin: 0 auto;
 	margin-top: 20px;
 	display: block;
+}
+
+
+
+.btn-add-group-div{
+	padding-left: 20%;
+	text-align: center;
+}
+
+.container-home .btn-add-group-div{
+	padding-left: 0% !important;
 }
 
 .course-edit{
