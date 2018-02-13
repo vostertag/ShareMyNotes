@@ -19,7 +19,7 @@ class CourseController extends Controller
     	if($course != null){
     		$current = $course->id;
     		if($course->user_id == $user->id && $user->role == 1){
-    			$notes = $course->notes;
+    			$notes = $course->notes->where('user_id', $user->id);
     			return view('common.notes', compact('user', 'notes', 'current'));
     		}else if($user->role == 2){
     			$user_courses = $user->course_users;
